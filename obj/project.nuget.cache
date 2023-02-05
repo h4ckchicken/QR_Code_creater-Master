@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "l+/LVvxg7MbfZcmvsTLpir5x/5iE2Qu8GZeYkoq7VPTwj7J1yJEORVEkHgNFtoVOCECMl5WvIHwmFdbNSiIGkA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\yusuf\\Desktop\\C# Dersleri\\Kaynak_Kodları\\QR_Code_creater\\QR_Code_creater.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\yusuf\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
+    "C:\\Users\\yusuf\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
