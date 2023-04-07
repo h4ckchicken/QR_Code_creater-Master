@@ -7,15 +7,21 @@ namespace QR_Code_creater
         public Form1()
         {
             InitializeComponent();
-            string kullaniciadi = Environment.UserName.ToString();
-            label1.Text = "QR-Code Creater - " + kullaniciadi;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (label3.ForeColor == Color.Red)
             {
-                MessageBox.Show("Kelime sayýsý en fazla 300 karakter olabilir!", "Uyarý!");
+                if(button1.Text == "QR Code Oluþtur")
+                {
+                    MessageBox.Show("Link uzunluðu en fazla 300 karakter olabilir!", "Uyarý!");
+                }
+                else
+                {
+                    MessageBox.Show("Link length can be up to 300 characters!", "Warning!");
+                }
             }
             else
             {
@@ -99,6 +105,18 @@ namespace QR_Code_creater
             {
                 label3.ForeColor = Color.FromArgb(240, 240, 240);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            label2.Text = "Dil Seçiniz";
+            button1.Text = "QR Code Oluþtur";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            label2.Text = "Choose Language";
+            button1.Text = "QR Code Creater";
         }
     }
 }

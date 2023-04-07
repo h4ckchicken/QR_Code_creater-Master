@@ -38,6 +38,9 @@
             pictureBox2 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
+            button6 = new Button();
+            button5 = new Button();
+            label2 = new Label();
             label3 = new Label();
             button4 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -80,7 +83,7 @@
             button1.Name = "button1";
             button1.Size = new Size(138, 45);
             button1.TabIndex = 2;
-            button1.Text = "QR Code Create";
+            button1.Text = "QR Code Oluştur";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -131,6 +134,9 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(20, 20, 20);
+            panel1.Controls.Add(button6);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button2);
@@ -148,6 +154,42 @@
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
             panel1.MouseUp += panel1_MouseUp;
+            // 
+            // button6
+            // 
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Image = (Image)resources.GetObject("button6.Image");
+            button6.Location = new Point(398, 18);
+            button6.Name = "button6";
+            button6.Size = new Size(34, 28);
+            button6.TabIndex = 12;
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(20, 20, 20);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.Location = new Point(360, 19);
+            button5.Name = "button5";
+            button5.Size = new Size(34, 28);
+            button5.TabIndex = 11;
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(241, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(119, 17);
+            label2.TabIndex = 10;
+            label2.Text = "Choose Language:";
             // 
             // label3
             // 
@@ -209,5 +251,8 @@
         private Button button4;
         private Label label3;
         private System.Windows.Forms.Timer timer1;
+        private Button button6;
+        private Button button5;
+        private Label label2;
     }
 }
