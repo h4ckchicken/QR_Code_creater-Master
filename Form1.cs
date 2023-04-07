@@ -7,16 +7,25 @@ namespace QR_Code_creater
         public Form1()
         {
             InitializeComponent();
+            string kullaniciadi = Environment.UserName.ToString();
+            label1.Text = "QR-Code Creater - " + kullaniciadi;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string str = tbMetin.Text;
-            QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode(str, QRCodeGenerator.ECCLevel.Q);
-            QRCode qrCode = new QRCode(qrCodeData);
-            Bitmap qrCodeImage = qrCode.GetGraphic(20, "#000000", "#FFFFFF");
-            pictureBox1.Image = qrCodeImage;
+            if (label3.ForeColor == Color.Red)
+            {
+                MessageBox.Show("Kelime sayýsý en fazla 300 karakter olabilir!", "Uyarý!");
+            }
+            else
+            {
+                string str = tbMetin.Text;
+                QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(str, QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
+                Bitmap qrCodeImage = qrCode.GetGraphic(20, "#000000", "#FFFFFF");
+                pictureBox1.Image = qrCodeImage;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,6 +76,29 @@ namespace QR_Code_creater
         {
             tbMetin.Text = null;
             pictureBox1.Image = null;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbMetin_TextChanged(object sender, EventArgs e)
+        {
+            // TextBox kontrolündeki metnin uzunluðunu hesaplýyoruz.
+            int textLength = tbMetin.Text.Length;
+
+
+            label3.Text = textLength.ToString() + " / 300";
+
+            if (textLength > 300)
+            {
+                label3.ForeColor = Color.Red;
+            }
+            else
+            {
+                label3.ForeColor = Color.FromArgb(240, 240, 240);
+            }
         }
     }
 }
